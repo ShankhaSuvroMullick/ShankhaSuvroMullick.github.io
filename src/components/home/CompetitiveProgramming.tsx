@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { ExternalLink } from 'lucide-react';
 
 interface PlatformStats {
   handle: string;
@@ -10,9 +9,6 @@ interface PlatformStats {
   title: string | null;
   problemsSolved: number | null;
   contests: number | null;
-  easy?: number | null;
-  medium?: number | null;
-  hard?: number | null;
   error?: boolean;
 }
 
@@ -23,50 +19,48 @@ interface CompetitiveData {
   last_updated: string;
 }
 
-function Platform({ name, data, color }: { name: string; data: PlatformStats; color: string }) {
-  const stats = [
-    { label: 'Rating', value: data.rating },
-    { label: 'Max Rating', value: data.maxRating },
-    { label: 'Title', value: data.title },
-    { label: 'Problems Solved', value: data.problemsSolved },
-    ...(data.easy != null ? [{ label: 'Easy', value: data.easy }] : []),
-    ...(data.medium != null ? [{ label: 'Medium', value: data.medium }] : []),
-    ...(data.hard != null ? [{ label: 'Hard', value: data.hard }] : []),
-    { label: 'Contests', value: data.contests },
-  ].filter(s => s.value !== null && s.value !== undefined);
+function Platform({ name, data }: { name: string; data: PlatformStats }) {
+  const stats: { label: string; value: string | number }[] = [];
+
+  if (data.rating != null)        stats.push({ label: 'Rating',         value: data.rating });
+  if (data.maxRating != null)     stats.push({ label: 'Max Rating',     value: data.maxRating });
+  if (data.title)                 stats.push({ label: 'Title',          value: data.title });
+  if (data.problemsSolved != null)stats.push({ label: 'Problems Solved',value: data.problemsSolved });
+  if (data.contests != null)      stats.push({ label: 'Contests',       value: data.contests });
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-1.5">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <span className={`w-2 h-2 rounded-full ${color}`} />
-          <h4 className="font-mono text-sm font-bold text-foreground">{name}</h4>
-          {data.title && (
-            <span className="text-xs font-mono px-2 py-0.5 rounded border border-border bg-secondary text-secondary-foreground">
-              {data.title}
-            </span>
-          )}
-        </div>
-        <a href={data.url} target="_blank" rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 text-xs font-mono text-muted-foreground hover:text-foreground border border-border px-2.5 py-1 rounded-md hover:bg-accent transition-colors">
-          Profile <ExternalLink className="w-3 h-3" />
+        <span className="font-mono text-sm font-bold text-foreground">{name}</span>
+        <a
+          href={data.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs font-mono text-muted-foreground hover:text-foreground border border-border px-2.5 py-1 rounded-md hover:bg-accent transition-colors"
+        >
+          → Profile
         </a>
       </div>
 
-      {data.error ? (
-        <p className="text-xs font-mono text-muted-foreground pl-4">// Stats unavailable — will retry next sync</p>
-      ) : stats.length === 0 ? (
-        <p className="text-xs font-mono text-muted-foreground pl-4">// Syncing stats — check back soon</p>
-      ) : (
-        <div className="flex flex-wrap gap-x-5 gap-y-1 pl-4">
-          {stats.map(s => (
-            <span key={s.label} className="text-sm text-muted-foreground">
-              <span className="font-mono text-xs text-muted-foreground/60 uppercase">{s.label}:</span>{' '}
-              <span className="text-foreground font-medium">{s.value}</span>
-            </span>
-          ))}
-        </div>
-      )}
+      <div className="pl-2">
+        {data.error ? (
+          <span className="text-xs font-mono text-muted-foreground">// Stats unavailable — will retry next sync</span>
+        ) : stats.length === 0 ? (
+          <span className="text-xs font-mono text-muted-foreground">// Syncing stats — check back soon</span>
+        ) : (
+          <div className="flex flex-wrap items-center">
+            {stats.map((s, i) => (
+              <span key={s.label} className="flex items-center text-sm">
+                <span className="text-muted-foreground/60 text-xs font-mono uppercase">{s.label}: </span>
+                <span className="text-foreground font-medium ml-0.5">{s.value}</span>
+                {i < stats.length - 1 && (
+                  <span className="text-muted-foreground/40 mx-2">·</span>
+                )}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
@@ -107,12 +101,12 @@ export function CompetitiveProgramming() {
           <p className="font-mono text-sm text-muted-foreground">// Stats syncing</p>
         </div>
       ) : (
-        <div className="space-y-8">
-          <Platform name="Codeforces" data={data.codeforces} color="bg-red-500" />
-          <div className="h-px bg-border" />
-          <Platform name="LeetCode" data={data.leetcode} color="bg-amber-500" />
-          <div className="h-px bg-border" />
-          <Platform name="AtCoder" data={data.atcoder} color="bg-blue-500" />
+        <div className="space-y-6">
+          <Platform name="Codeforces" data={data.codeforces} />
+          <div className="h-px bg-border/50" />
+          <Platform name="LeetCode" data={data.leetcode} />
+          <div className="h-px bg-border/50" />
+          <Platform name="AtCoder" data={data.atcoder} />
         </div>
       )}
       <div className="h-px bg-border" />
