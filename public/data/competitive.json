@@ -6,21 +6,16 @@
     "maxRating": null,
     "title": null,
     "problemsSolved": 3,
-    "contests": 0,
-    "error": false
+    "contests": 0
   },
   "leetcode": {
     "handle": "RMSM",
     "url": "https://leetcode.com/u/RMSM/",
-    "rating": null,
-    "maxRating": null,
-    "title": null,
-    "problemsSolved": null,
-    "easy": null,
-    "medium": null,
-    "hard": null,
-    "contests": null,
-    "error": true
+    "rating": 1463,
+    "maxRating": 1463,
+    "title": "Coder",
+    "problemsSolved": 57,
+    "contests": 1
   },
   "atcoder": {
     "handle": "ShankhaSM",
@@ -29,8 +24,7 @@
     "maxRating": 0,
     "title": "Gray",
     "problemsSolved": null,
-    "contests": 0,
-    "error": false
+    "contests": 0
   },
-  "last_updated": "2026-07-17T21:43:32.761474+00:00"
+  "last_updated": "2026-07-17"
 }
