@@ -12,15 +12,15 @@
   "leetcode": {
     "handle": "RMSM",
     "url": "https://leetcode.com/u/RMSM/",
-    "rating": 1463,
-    "maxRating": 1463,
-    "title": "Specialist",
-    "problemsSolved": 57,
-    "easy": 27,
-    "medium": 20,
-    "hard": 10,
-    "contests": 1,
-    "error": false
+    "rating": null,
+    "maxRating": null,
+    "title": null,
+    "problemsSolved": null,
+    "easy": null,
+    "medium": null,
+    "hard": null,
+    "contests": null,
+    "error": true
   },
   "atcoder": {
     "handle": "ShankhaSM",
@@ -32,5 +32,5 @@
     "contests": 0,
     "error": false
   },
-  "last_updated": "2026-07-17T11:25:27.814938+00:00"
+  "last_updated": "2026-07-17T11:31:42.758886+00:00"
 }
