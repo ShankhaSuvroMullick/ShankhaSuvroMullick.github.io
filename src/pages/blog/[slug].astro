@@ -1,0 +1,13 @@
+---
+import PostLayout from '../../layouts/PostLayout.astro';
+import '../../styles/global.css';
+
+export function getStaticPaths() {
+  return [];
+}
+
+const { slug } = Astro.params;
+---
+<PostLayout title="Post" description="" date={new Date().toISOString()} readingTime={5} tags={[]}>
+  <p>Post content for: {slug}</p>
+</PostLayout>

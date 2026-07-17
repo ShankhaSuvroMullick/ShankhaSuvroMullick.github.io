@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ShankhaSuvroMullick.github.io/sitemap-index.xml

@@ -1,0 +1,36 @@
+{
+  "codeforces": {
+    "handle": "Shankha_Suvro_Mullick",
+    "url": "https://codeforces.com/profile/Shankha_Suvro_Mullick",
+    "rating": null,
+    "maxRating": null,
+    "title": null,
+    "problemsSolved": 3,
+    "contests": 0,
+    "error": false
+  },
+  "leetcode": {
+    "handle": "RMSM",
+    "url": "https://leetcode.com/u/RMSM/",
+    "rating": null,
+    "maxRating": null,
+    "title": null,
+    "problemsSolved": null,
+    "easy": null,
+    "medium": null,
+    "hard": null,
+    "contests": null,
+    "error": true
+  },
+  "atcoder": {
+    "handle": "ShankhaSM",
+    "url": "https://atcoder.jp/users/ShankhaSM",
+    "rating": 0,
+    "maxRating": 0,
+    "title": "Gray",
+    "problemsSolved": null,
+    "contests": 0,
+    "error": false
+  },
+  "last_updated": "2026-07-17T11:08:49.008903+00:00"
+}

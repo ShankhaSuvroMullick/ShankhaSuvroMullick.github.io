@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-display: 'Outfit', 'Inter', sans-serif;
+
+    /* Light palette — designed independently */
+    --background: 0 0% 100%;
+    --foreground: 224 14% 8%;
+    --card: 0 0% 99%;
+    --card-foreground: 224 14% 8%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 14% 8%;
+    --primary: 224 14% 8%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 220 13% 95%;
+    --secondary-foreground: 224 14% 8%;
+    --muted: 220 13% 95%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 220 13% 93%;
+    --accent-foreground: 224 14% 8%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 224 14% 8%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Dark palette — separate design, not inverted */
+    --background: 224 20% 6%;
+    --foreground: 210 17% 93%;
+    --card: 224 20% 8%;
+    --card-foreground: 210 17% 93%;
+    --popover: 224 20% 8%;
+    --popover-foreground: 210 17% 93%;
+    --primary: 210 17% 93%;
+    --primary-foreground: 224 20% 6%;
+    --secondary: 224 16% 13%;
+    --secondary-foreground: 210 17% 93%;
+    --muted: 224 16% 13%;
+    --muted-foreground: 220 9% 58%;
+    --accent: 224 16% 15%;
+    --accent-foreground: 210 17% 93%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 17% 93%;
+    --border: 224 16% 14%;
+    --input: 224 16% 14%;
+    --ring: 220 9% 70%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    selection-color: hsl(var(--primary));
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply tracking-tight font-bold;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { @apply bg-background; }
+::-webkit-scrollbar-thumb { @apply bg-muted-foreground/20 rounded-full; }
+::-webkit-scrollbar-thumb:hover { @apply bg-muted-foreground/40; }
+
+/* Selection */
+::selection { background: hsl(var(--primary) / 0.15); color: hsl(var(--foreground)); }
+
+/* Focus visible */
+:focus-visible { @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background; }
+
+/* Prose overrides for blog */
+.prose { @apply text-foreground; }
+.prose h1, .prose h2, .prose h3 { @apply text-foreground; }
+.prose code { @apply font-mono text-sm bg-muted px-1.5 py-0.5 rounded; }
+.prose pre { @apply bg-muted rounded-lg p-4 overflow-x-auto; }
+.prose a { @apply text-primary underline underline-offset-4; }
+.prose blockquote { @apply border-l-4 border-border pl-4 italic text-muted-foreground; }
+
+/* Micro-interaction utilities */
+.hover-lift { @apply transition-transform duration-200 hover:-translate-y-0.5; }
+.hover-fade { @apply transition-opacity duration-200 hover:opacity-70; }

@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Navigation } from '../components/layout/Navigation';
+import { Footer } from '../components/layout/Footer';
+import '../styles/global.css';
+
+const categories = [
+  { title: 'Languages', items: ['C++17 (systems, quant)', 'Python (ML, scripting)', 'TypeScript (web)', 'Rust (learning)'] },
+  { title: 'Editor & Terminal', items: ['VS Code', 'Neovim (learning)', 'Windows Terminal', 'Git Bash', 'PowerShell'] },
+  { title: 'AI & ML Stack', items: ['PyTorch', 'scikit-learn', 'NumPy / Pandas', 'Hugging Face', 'LangChain', 'Ollama (local — Qwen 7B on RTX 3050)'] },
+  { title: 'Web Stack', items: ['Astro 7', 'React 19', 'Tailwind CSS v3', 'shadcn/ui', 'Framer Motion', 'Supabase'] },
+  { title: 'Hardware', items: ['RTX 3050 (local AI inference)', 'Windows 11', '16GB RAM'] },
+  { title: 'Services', items: ['GitHub (code + portfolio)', 'GitHub Pages (hosting)', 'Vercel (web apps)', 'Anthropic Claude (AI pair programming)'] },
+  { title: 'Learning', items: ['Striver\'s A2Z DSA', 'Codeforces', 'Karpathy\'s Zero to Hero', 'DDIA (Kleppmann)', 'The Cherno (C++)'] },
+];
+---
+<BaseLayout title="Uses — Shankha Suvro Mullick" description="My tools, stack, and setup.">
+  <Navigation client:load currentPath={Astro.url.pathname} />
+  <main class="container mx-auto px-4 md:px-8 py-12 max-w-3xl space-y-12">
+    <header class="space-y-3">
+      <h1 class="text-4xl font-display font-bold tracking-tight">Uses</h1>
+      <p class="text-muted-foreground text-lg">Tools, stack, and setup I use daily.</p>
+    </header>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+      {categories.map(cat => (
+        <div class="space-y-4">
+          <h2 class="font-mono text-xs font-bold uppercase tracking-widest text-primary border-l-2 border-primary pl-3">{cat.title}</h2>
+          <ul class="space-y-2">
+            {cat.items.map(item => (
+              <li class="text-sm text-muted-foreground hover:text-foreground transition-colors">{item}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

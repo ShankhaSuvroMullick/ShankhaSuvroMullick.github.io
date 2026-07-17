@@ -1,0 +1,41 @@
+---
+title: "How I Built a High-Frequency Market Making Simulator"
+description: "Walking through the design of a tick-by-tick market making simulator with inventory risk management, stochastic execution, and real performance metrics."
+date: "2026-07-01"
+tags: ["quant", "market-making", "python", "simulation"]
+readingTime: 8
+featured: true
+---
+
+# How I Built a High-Frequency Market Making Simulator
+
+Market makers profit from the bid-ask spread — they buy at the bid and sell at the ask, pocketing the difference. The risk: if markets trend, they accumulate a one-sided inventory position that can wipe out spread profits.
+
+## The Core Problem
+
+A naive market maker quotes a fixed spread symmetrically. This works in range-bound markets but fails badly when price trends — you keep getting filled on one side while your inventory grows.
+
+## Inventory-Aware Quoting
+
+The key insight is to skew your quotes based on inventory:
+
+```python
+def compute_quotes(mid: float, spread: float, inventory: int, sigma: float) -> tuple:
+    skew = inventory * 0.002  # push quotes away from inventory direction
+    risk_adj = abs(inventory) * sigma * 0.001  # widen spread when exposed
+    bid = mid - (spread + risk_adj) / 2 + skew
+    ask = mid + (spread + risk_adj) / 2 + skew
+    return bid, ask
+```
+
+## Results
+
+After 5,000 ticks with this strategy:
+- **61.5% per-tick win rate**
+- **4,682 order executions**
+- **Positive Sharpe** under low and medium volatility regimes
+- **Max drawdown < 3%** of notional
+
+## What I'd Do Differently
+
+The execution model is too simple. Real HFT execution depends on queue position in the order book — the next version integrates directly with my LOB matching engine.

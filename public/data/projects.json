@@ -1,0 +1,472 @@
+{
+  "meta": {
+    "owner": "Shankha Suvro Mullick",
+    "github": "https://github.com/ShankhaSuvroMullick",
+    "last_updated": "2026-07-07"
+  },
+  "categories": [
+    {
+      "id": "ai-ml",
+      "label": "Artificial Intelligence & ML",
+      "icon": "🤖",
+      "subcategories": [
+        "Large Language Models",
+        "AI Agents",
+        "RAG",
+        "Computer Vision",
+        "NLP",
+        "Reinforcement Learning",
+        "AI Evaluation",
+        "Generative AI",
+        "Multimodal AI"
+      ]
+    },
+    {
+      "id": "quant-finance",
+      "label": "Mathematics & Quantitative",
+      "icon": "💹",
+      "subcategories": [
+        "Quantitative Finance",
+        "Algorithmic Trading",
+        "Options Pricing",
+        "Market Making",
+        "Risk Models",
+        "Mathematical Optimization",
+        "Numerical Methods",
+        "Statistics"
+      ]
+    },
+    {
+      "id": "systems",
+      "label": "Systems Programming",
+      "icon": "⚡",
+      "subcategories": [
+        "High Performance Computing",
+        "Concurrent Programming",
+        "Compilers",
+        "Operating Systems",
+        "Embedded Systems",
+        "Computer Networks",
+        "Distributed Computing"
+      ]
+    },
+    {
+      "id": "software-engineering",
+      "label": "Software Engineering",
+      "icon": "🛠",
+      "subcategories": [
+        "Backend Development",
+        "Frontend Development",
+        "Full-Stack",
+        "API Development",
+        "Microservices",
+        "System Design",
+        "Distributed Systems"
+      ]
+    },
+    {
+      "id": "data",
+      "label": "Data Science & Analytics",
+      "icon": "📊",
+      "subcategories": [
+        "Data Engineering",
+        "Data Science",
+        "Big Data",
+        "Data Visualization",
+        "Statistical Modeling",
+        "Feature Engineering",
+        "A/B Testing"
+      ]
+    },
+    {
+      "id": "cloud-devops",
+      "label": "Cloud & Infrastructure",
+      "icon": "☁️",
+      "subcategories": [
+        "DevOps",
+        "Platform Engineering",
+        "Docker",
+        "Kubernetes",
+        "CI/CD",
+        "Serverless",
+        "IaC",
+        "SRE"
+      ]
+    },
+    {
+      "id": "security",
+      "label": "Security",
+      "icon": "🔐",
+      "subcategories": [
+        "Cybersecurity",
+        "Cryptography",
+        "Application Security",
+        "Network Security",
+        "Reverse Engineering"
+      ]
+    },
+    {
+      "id": "research",
+      "label": "Research",
+      "icon": "🔬",
+      "subcategories": [
+        "Research Papers",
+        "Reproducibility Studies",
+        "Benchmark Creation",
+        "Survey Papers",
+        "Experimental Studies"
+      ]
+    },
+    {
+      "id": "open-source",
+      "label": "Open Source",
+      "icon": "📦",
+      "subcategories": [
+        "Libraries & Frameworks",
+        "Developer Tools",
+        "Documentation",
+        "Community Projects"
+      ]
+    },
+    {
+      "id": "competitive-programming",
+      "label": "Competitive Programming",
+      "icon": "🏆",
+      "subcategories": [
+        "Data Structures & Algorithms",
+        "LeetCode",
+        "Codeforces",
+        "ICPC",
+        "Algorithm Design"
+      ]
+    },
+    {
+      "id": "product",
+      "label": "Product & Entrepreneurship",
+      "icon": "🚀",
+      "subcategories": [
+        "SaaS",
+        "Startup Projects",
+        "MVPs",
+        "Automation",
+        "Growth Engineering"
+      ]
+    },
+    {
+      "id": "robotics",
+      "label": "Robotics & Hardware",
+      "icon": "🦾",
+      "subcategories": [
+        "Robotics",
+        "Autonomous Systems",
+        "IoT",
+        "Edge AI",
+        "Drone Systems",
+        "Sensor Fusion"
+      ]
+    },
+    {
+      "id": "blockchain",
+      "label": "Blockchain & Web3",
+      "icon": "⛓",
+      "subcategories": [
+        "Smart Contracts",
+        "Web3",
+        "dApps",
+        "DeFi"
+      ]
+    },
+    {
+      "id": "mobile-game",
+      "label": "Mobile & Game Dev",
+      "icon": "🎮",
+      "subcategories": [
+        "Android",
+        "iOS",
+        "Cross-Platform",
+        "Game Development",
+        "AR/VR"
+      ]
+    },
+    {
+      "id": "professional",
+      "label": "Professional",
+      "icon": "🎓",
+      "subcategories": [
+        "Hackathons",
+        "Fellowships",
+        "Certifications",
+        "Awards",
+        "Internships",
+        "Teaching"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "lob-matching-engine",
+      "name": "Low-Latency LOB Matching Engine",
+      "repo": "https://github.com/ShankhaSuvroMullick/lob-matching-engine",
+      "demo": "",
+      "description": "High-frequency limit order book matching engine targeting sub-microsecond latency using SIMD-optimized price level traversal and lock-free queue architecture.",
+      "positioning": "Sub-microsecond order matching for high-frequency trading infrastructure",
+      "languages": [
+        "C++17"
+      ],
+      "frameworks": [],
+      "databases": [],
+      "tools": [
+        "CMake",
+        "GDB",
+        "Valgrind",
+        "Google Benchmark",
+        "Perf"
+      ],
+      "cloud": [],
+      "concepts": [
+        "Low Latency",
+        "Order Book",
+        "Market Making",
+        "High Frequency Trading",
+        "SIMD",
+        "Lock-Free Data Structures",
+        "Memory Optimization",
+        "Benchmarking",
+        "Cache Optimization"
+      ],
+      "category": "quant-finance",
+      "subcategory": "Market Making",
+      "tags": [
+        "order-book",
+        "low-latency",
+        "hft",
+        "simd",
+        "lock-free",
+        "cpp17",
+        "matching-engine"
+      ],
+      "status": "active",
+      "featured": true,
+      "started": "2025-10",
+      "last_updated": "2026-07",
+      "stars": 0,
+      "benchmark": "<1μs median latency",
+      "difficulty": "expert",
+      "license": "MIT",
+      "architectureOverview": "Lock-free MPSC queue for order ingestion feeding into a price-level indexed order book with SIMD-accelerated traversal. Separate execution engine with atomic operations for fill matching.",
+      "features": [
+        "Price-time priority matching",
+        "SIMD-accelerated price level search",
+        "Lock-free order queue",
+        "Sub-microsecond benchmarking harness",
+        "Market/limit/cancel order types"
+      ],
+      "challenges": [
+        {
+          "challenge": "False sharing between bid and ask sides causing cache misses at high throughput",
+          "solution": "Aligned bid/ask structures to separate cache lines with explicit padding"
+        },
+        {
+          "challenge": "Lock contention on order ID generation under load",
+          "solution": "Switched to atomic fetch-and-add with relaxed memory ordering for ID allocation"
+        }
+      ],
+      "caseStudy": {
+        "problem": "Manual order matching in HFT systems is the critical bottleneck. Every microsecond of latency in order processing translates directly to worse fill prices and missed opportunities. Building a matching engine that operates below 1μs requires careful co-design of data structures, memory layout, and CPU micro-architecture awareness.",
+        "constraints": [
+          "Must process 2M+ events/sec sustained",
+          "P99 latency < 5μs",
+          "No heap allocation in hot path",
+          "Single-threaded order book with concurrent ingestion queue"
+        ],
+        "decisions": [
+          "Lock-free MPSC queue over mutex-guarded queue — eliminates contention on producer side",
+          "Price levels as sorted arrays over red-black tree — better cache locality for common case",
+          "SIMD for price search over sequential scan — 4x speedup on AVX2",
+          "Custom allocator for order nodes — avoids malloc overhead in critical path"
+        ],
+        "tradeoffs": [
+          "Arrays for price levels: O(n) insertion vs O(log n) for tree, but cache locality wins for typical book depth < 100 levels",
+          "Lock-free queue: harder to reason about, but eliminates 200-400ns mutex overhead per order",
+          "Single-threaded book: simplifies correctness, sacrifices parallelism"
+        ],
+        "metrics": [
+          "< 1μs median order processing latency",
+          "< 5μs P99 under 2M events/sec load",
+          "0 heap allocations in hot path",
+          "4x price search speedup vs sequential via SIMD"
+        ],
+        "retrospective": "I'd add a formal latency histogram output to the benchmark harness earlier — I wasted time debugging performance regressions that a proper histogram would have caught immediately. I'd also explore prefetching next price level during SIMD search."
+      },
+      "notes": "FTTP application project"
+    },
+    {
+      "id": "hf-market-making-simulator",
+      "name": "High-Frequency Market Making Simulator",
+      "repo": "https://github.com/ShankhaSuvroMullick/hf-market-making-simulator",
+      "demo": "",
+      "description": "Tick-by-tick market making simulation with dynamic bid-ask spread quoting, inventory-based quote skewing, and stochastic execution model across 5,000 price ticks.",
+      "languages": [
+        "Python"
+      ],
+      "frameworks": [
+        "NumPy",
+        "Pandas",
+        "Matplotlib"
+      ],
+      "databases": [],
+      "tools": [
+        "Jupyter",
+        "pytest"
+      ],
+      "cloud": [],
+      "concepts": [
+        "Market Making",
+        "Algorithmic Trading",
+        "Spread Optimization",
+        "Inventory Risk",
+        "Adverse Selection",
+        "Sharpe Ratio",
+        "Monte Carlo",
+        "Volatility Modeling",
+        "Backtesting",
+        "Quantitative Finance"
+      ],
+      "category": "quant-finance",
+      "subcategory": "Algorithmic Trading",
+      "tags": [
+        "market-making",
+        "simulation",
+        "hft",
+        "quant",
+        "python",
+        "backtesting",
+        "sharpe-ratio",
+        "inventory-risk"
+      ],
+      "status": "active",
+      "featured": true,
+      "started": "2026-05",
+      "last_updated": "2026-07",
+      "stars": 0,
+      "benchmark": "61.5% per-tick win rate · 4,682 order executions",
+      "difficulty": "advanced",
+      "license": "MIT",
+      "architectureOverview": "Event-driven simulation engine with a stochastic price process, inventory-aware quoting strategy, and execution model with fill probability based on order flow toxicity.",
+      "features": [
+        "Inventory-based quote skewing",
+        "Dynamic spread optimization",
+        "Stochastic execution model",
+        "Sharpe ratio & max drawdown metrics",
+        "Realized volatility regime switching"
+      ],
+      "challenges": [
+        {
+          "challenge": "Inventory blowup under trending markets — one-sided fill pressure",
+          "solution": "Added inventory risk penalty to spread formula: spread += γ * |inventory| * σ"
+        },
+        {
+          "challenge": "Overfit strategy to specific volatility regime",
+          "solution": "Tested across multiple σ regimes; added realized volatility adaptation"
+        }
+      ],
+      "caseStudy": {
+        "problem": "Market makers profit from the bid-ask spread but face inventory risk when markets trend. Building a simulator that accurately models execution uncertainty, adverse selection, and inventory dynamics is essential for strategy development without risking real capital.",
+        "constraints": [
+          "Must model realistic fill probabilities (not deterministic)",
+          "Inventory must be bounded",
+          "P&L attribution must separate spread capture from inventory moves"
+        ],
+        "decisions": [
+          "Stochastic execution model over deterministic — more realistic; fills depend on queue position",
+          "Inventory-aware skewing over symmetric quoting — reduces adverse selection",
+          "Realized volatility for regime detection over implied — simpler, no options data needed"
+        ],
+        "tradeoffs": [
+          "Stochastic fills: harder to backtest reproducibly, but necessary for realistic strategy evaluation",
+          "Inventory skewing: reduces adverse selection but widens effective spread, hurting fill rate"
+        ],
+        "metrics": [
+          "61.5% per-tick win rate",
+          "4,682 total order executions across 5,000 ticks",
+          "Positive Sharpe under low and medium volatility regimes",
+          "Max drawdown contained to <3% of notional under tested regimes"
+        ],
+        "retrospective": "The execution model is still too simple — real HFT execution depends on queue position, which requires a proper limit order book simulation. The next version should integrate with the LOB matching engine."
+      }
+    },
+    {
+      "id": "cli-task-manager",
+      "name": "CLI Task Manager",
+      "repo": "https://github.com/ShankhaSuvroMullick/cli-task-manager",
+      "demo": "",
+      "description": "Production-grade CLI task manager with 9 Typer commands, JSON-backed persistence, dataclass serialization, automatic backup, and single-command undo — zero data loss across destructive operations.",
+      "languages": [
+        "Python"
+      ],
+      "frameworks": [
+        "Typer"
+      ],
+      "databases": [
+        "JSON"
+      ],
+      "tools": [
+        "pytest",
+        "Git"
+      ],
+      "cloud": [],
+      "concepts": [
+        "CLI Design",
+        "System Design",
+        "Data Persistence",
+        "Error Handling",
+        "Software Architecture",
+        "CRUD",
+        "Serialization",
+        "Backup & Recovery"
+      ],
+      "category": "software-engineering",
+      "subcategory": "Backend Development",
+      "tags": [
+        "cli",
+        "typer",
+        "python",
+        "json",
+        "crud",
+        "task-manager",
+        "backup",
+        "undo"
+      ],
+      "status": "active",
+      "featured": false,
+      "started": "2026-06",
+      "last_updated": "2026-06",
+      "stars": 0,
+      "benchmark": "9 commands · 4-module architecture · zero data loss",
+      "difficulty": "medium",
+      "license": "MIT",
+      "architectureOverview": "4-module separation: CLI layer (Typer commands) → business logic → models (dataclasses) → storage (JSON with atomic write + backup). Single-command undo via backup file restoration.",
+      "features": [
+        "9 Typer commands",
+        "Bulk operations (bulk-done, bulk-delete)",
+        "Search and filter (priority, overdue, status)",
+        "TXT/CSV export with timestamps",
+        "Automatic pre-write backup",
+        "Single-command undo",
+        "5 live statistics across task states"
+      ],
+      "challenges": [
+        {
+          "challenge": "Destructive operations (delete, bulk-delete) risking data loss if interrupted",
+          "solution": "Atomic write pattern: write to temp file, rename to target — single-command undo via backup"
+        },
+        {
+          "challenge": "Validating due dates and priorities at the CLI layer without leaking logic",
+          "solution": "Validation callbacks in Typer decorators — errors surface before any business logic runs"
+        }
+      ]
+    }
+  ],
+  "experience": [],
+  "competitive_programming": []
+}

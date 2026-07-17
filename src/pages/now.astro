@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Navigation } from '../components/layout/Navigation';
+import { Footer } from '../components/layout/Footer';
+import '../styles/global.css';
+const updated = 'July 2026';
+---
+<BaseLayout title="Now — Shankha Suvro Mullick" description="What I'm currently working on.">
+  <Navigation client:load currentPath={Astro.url.pathname} />
+  <main class="container mx-auto px-4 md:px-8 py-12 max-w-2xl space-y-10">
+    <header class="space-y-3">
+      <h1 class="text-4xl font-display font-bold tracking-tight">Now</h1>
+      <p class="text-xs font-mono text-muted-foreground">Updated: {updated}</p>
+    </header>
+    <div class="space-y-8 text-muted-foreground leading-relaxed">
+      <section class="space-y-3">
+        <h2 class="text-lg font-bold text-foreground">Building</h2>
+        <ul class="space-y-2 text-sm">
+          <li>Low-Latency LOB Matching Engine in C++17 — targeting &lt;1μs median latency with SIMD optimization</li>
+          <li>Options Pricing Engine — implementing Black-Scholes, Binomial, and Monte Carlo models</li>
+          <li>This portfolio site — Astro 7 + React 19 + shadcn</li>
+        </ul>
+      </section>
+      <section class="space-y-3">
+        <h2 class="text-lg font-bold text-foreground">Preparing</h2>
+        <ul class="space-y-2 text-sm">
+          <li>Jane Street FTTP application (deadline: August 23, 2026)</li>
+          <li>7-week prep plan: mental arithmetic, probability, market-making interview skills</li>
+          <li>KIIT CS (AI/ML) — starting August 2026</li>
+        </ul>
+      </section>
+      <section class="space-y-3">
+        <h2 class="text-lg font-bold text-foreground">Learning</h2>
+        <ul class="space-y-2 text-sm">
+          <li>Striver's A2Z DSA — systematic competitive programming prep</li>
+          <li>Designing Data-Intensive Applications (Kleppmann)</li>
+          <li>Karpathy's Zero to Hero — neural networks from scratch</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

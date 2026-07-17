@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Navigation } from '../../components/layout/Navigation';
+import { Footer } from '../../components/layout/Footer';
+import '../../styles/global.css';
+
+const { id } = Astro.params;
+
+export function getStaticPaths() {
+  return [];
+}
+---
+<BaseLayout title="Project Case Study — Shankha Suvro Mullick">
+  <Navigation client:load currentPath={Astro.url.pathname} />
+  <main class="container mx-auto px-4 md:px-8 py-12 max-w-5xl">
+    <div id="case-study-root" data-id={id}></div>
+    <div id="case-study-fallback" style="display:none;padding:5rem;text-align:center;font-family:monospace;color:var(--muted-foreground)">
+      Project not found. <a href="/projects" style="text-decoration:underline">← Back to projects</a>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<script>
+  async function mount() {
+    const root = document.getElementById('case-study-root');
+    const fallback = document.getElementById('case-study-fallback');
+    if (!root) return;
+    const projectId = root.dataset.id;
+    try {
+      const { createRoot } = await import('react-dom/client');
+      const { createElement } = await import('react');
+      const { CaseStudy } = await import('../../components/projects/CaseStudy');
+      const res = await fetch('/data/projects.json');
+      if (!res.ok) throw new Error('Failed to load projects');
+      const data = await res.json();
+      const project = data.projects.find((p) => p.id === projectId);
+      if (project) {
+        createRoot(root).render(createElement(CaseStudy, { project }));
+      } else {
+        if (fallback) fallback.style.display = 'block';
+      }
+    } catch (e) {
+      if (fallback) fallback.style.display = 'block';
+    }
+  }
+  mount();
+</script>

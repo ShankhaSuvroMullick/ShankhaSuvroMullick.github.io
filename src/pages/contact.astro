@@ -1,0 +1,150 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Navigation } from '../components/layout/Navigation';
+import { Footer } from '../components/layout/Footer';
+import '../styles/global.css';
+---
+<BaseLayout
+  title="Contact — Shankha Suvro Mullick"
+  description="Get in touch — open to internships, research collaborations, and quant roles."
+>
+  <Navigation client:load currentPath={Astro.url.pathname} />
+  <main class="container mx-auto px-4 md:px-8 py-12 max-w-2xl space-y-12">
+
+    <header class="space-y-3">
+      <h1 class="text-4xl font-display font-bold tracking-tight">Contact</h1>
+      <p class="text-muted-foreground text-lg leading-relaxed">
+        Open to internships, research collaborations, quant roles, and interesting conversations about AI and trading systems.
+      </p>
+    </header>
+
+    <!-- Quick links -->
+    <div class="space-y-4">
+      <h2 class="text-sm font-mono font-bold uppercase tracking-widest text-muted-foreground">Reach me at</h2>
+      <div class="space-y-2">
+        <a href="mailto:shankhasuvromullick1234@gmail.com"
+          class="flex items-center justify-between p-4 rounded-lg border border-border hover:bg-accent transition-colors group">
+          <div class="flex items-center gap-3">
+            <span class="font-mono text-xs text-muted-foreground w-20">Email</span>
+            <span class="text-sm font-medium text-foreground">shankhasuvromullick1234@gmail.com</span>
+          </div>
+          <span class="text-muted-foreground group-hover:text-foreground transition-colors">↗</span>
+        </a>
+
+        <a href="https://github.com/ShankhaSuvroMullick" target="_blank" rel="noopener noreferrer"
+          class="flex items-center justify-between p-4 rounded-lg border border-border hover:bg-accent transition-colors group">
+          <div class="flex items-center gap-3">
+            <span class="font-mono text-xs text-muted-foreground w-20">GitHub</span>
+            <span class="text-sm font-medium text-foreground">ShankhaSuvroMullick</span>
+          </div>
+          <span class="text-muted-foreground group-hover:text-foreground transition-colors">↗</span>
+        </a>
+
+        <a href="https://linkedin.com/in/shankha-suvro-mullick-rmsm" target="_blank" rel="noopener noreferrer"
+          class="flex items-center justify-between p-4 rounded-lg border border-border hover:bg-accent transition-colors group">
+          <div class="flex items-center gap-3">
+            <span class="font-mono text-xs text-muted-foreground w-20">LinkedIn</span>
+            <span class="text-sm font-medium text-foreground">shankha-suvro-mullick-rmsm</span>
+          </div>
+          <span class="text-muted-foreground group-hover:text-foreground transition-colors">↗</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Resume downloads -->
+    <div class="space-y-4">
+      <h2 class="text-sm font-mono font-bold uppercase tracking-widest text-muted-foreground">Resume</h2>
+      <div class="flex gap-3">
+        <a href="/data/resume.pdf" download
+          class="flex-1 flex items-center justify-center gap-2 py-3 rounded-lg border border-red-200 dark:border-red-900 bg-red-50 dark:bg-red-950/30 text-red-700 dark:text-red-400 text-sm font-medium hover:bg-red-100 dark:hover:bg-red-950/50 transition-colors">
+          ↓ Download PDF
+        </a>
+        <a href="/data/resume.docx" download
+          class="flex-1 flex items-center justify-center gap-2 py-3 rounded-lg border border-blue-200 dark:border-blue-900 bg-blue-50 dark:bg-blue-950/30 text-blue-700 dark:text-blue-400 text-sm font-medium hover:bg-blue-100 dark:hover:bg-blue-950/50 transition-colors">
+          ↓ Download DOCX
+        </a>
+      </div>
+    </div>
+
+    <!-- Message form — Web3Forms (sends directly, no redirect) -->
+    <div class="space-y-4">
+      <h2 class="text-sm font-mono font-bold uppercase tracking-widest text-muted-foreground">Send a message</h2>
+
+      <div id="form-success" class="hidden py-4 px-5 rounded-lg border border-emerald-200 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-950/30 text-emerald-700 dark:text-emerald-400 text-sm font-mono">
+        ✓ Message sent — I'll get back to you soon.
+      </div>
+
+      <div id="form-error" class="hidden py-4 px-5 rounded-lg border border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-950/30 text-red-700 dark:text-red-400 text-sm font-mono">
+        ✗ Something went wrong. Please email me directly.
+      </div>
+
+      <form id="contact-form" class="space-y-4">
+        <input type="hidden" name="access_key" value="2898c3a0-1d11-4802-9869-bf9410a1c4d7" />
+        <input type="hidden" name="subject" value="Portfolio Contact Form" />
+        <input type="hidden" name="from_name" value="Portfolio Contact" />
+        <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
+
+        <div class="space-y-1.5">
+          <label class="text-xs font-mono text-muted-foreground uppercase tracking-wider">Name</label>
+          <input name="name" type="text" required placeholder="Your name"
+            class="w-full px-4 py-2.5 rounded-md border border-border bg-background text-foreground text-sm outline-none focus:ring-2 focus:ring-ring transition-all placeholder:text-muted-foreground" />
+        </div>
+
+        <div class="space-y-1.5">
+          <label class="text-xs font-mono text-muted-foreground uppercase tracking-wider">Email</label>
+          <input name="email" type="email" required placeholder="your@email.com"
+            class="w-full px-4 py-2.5 rounded-md border border-border bg-background text-foreground text-sm outline-none focus:ring-2 focus:ring-ring transition-all placeholder:text-muted-foreground" />
+        </div>
+
+        <div class="space-y-1.5">
+          <label class="text-xs font-mono text-muted-foreground uppercase tracking-wider">Message</label>
+          <textarea name="message" rows={5} required placeholder="Internship inquiry, research collaboration, or just saying hi..."
+            class="w-full px-4 py-2.5 rounded-md border border-border bg-background text-foreground text-sm outline-none focus:ring-2 focus:ring-ring transition-all resize-none placeholder:text-muted-foreground"></textarea>
+        </div>
+
+        <button type="submit" id="submit-btn"
+          class="w-full py-2.5 rounded-md bg-foreground text-background text-sm font-medium hover:opacity-90 active:scale-95 transition-all">
+          Send Message
+        </button>
+      </form>
+    </div>
+
+  </main>
+  <Footer />
+</BaseLayout>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const btn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const success = document.getElementById('form-success')!;
+  const error = document.getElementById('form-error')!;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    const data = Object.fromEntries(new FormData(form));
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const json = await res.json();
+
+      if (json.success) {
+        form.reset();
+        form.style.display = 'none';
+        success.classList.remove('hidden');
+      } else {
+        throw new Error(json.message);
+      }
+    } catch (err) {
+      error.classList.remove('hidden');
+      btn.textContent = 'Send Message';
+      btn.disabled = false;
+    }
+  });
+</script>

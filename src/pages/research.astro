@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Navigation } from '../components/layout/Navigation';
+import { Footer } from '../components/layout/Footer';
+import '../styles/global.css';
+---
+<BaseLayout title="Research — Shankha Suvro Mullick" description="Research papers, reproducibility studies, and academic work.">
+  <Navigation client:load currentPath={Astro.url.pathname} />
+  <main class="container mx-auto px-4 md:px-8 py-12 max-w-4xl space-y-12">
+    <header class="space-y-3">
+      <h1 class="text-4xl font-display font-bold tracking-tight">Research</h1>
+      <p class="text-muted-foreground text-lg max-w-2xl">Papers, reproducibility studies, benchmark creation, and academic contributions.</p>
+    </header>
+    <div class="py-20 text-center border border-dashed border-border rounded-lg">
+      <p class="font-mono text-sm text-muted-foreground">// coming soon</p>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

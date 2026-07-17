@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Navigation } from '../../components/layout/Navigation';
+import { Footer } from '../../components/layout/Footer';
+import '../../styles/global.css';
+---
+<BaseLayout
+  title="Projects — Shankha Suvro Mullick"
+  description="Engineering projects across AI/ML, quantitative finance, systems programming, and full-stack development."
+>
+  <Navigation client:load currentPath={Astro.url.pathname} />
+  <main class="container mx-auto px-4 md:px-8 py-12 max-w-6xl">
+    <header class="mb-12 space-y-3">
+      <h1 class="text-4xl font-display font-bold tracking-tight">Technical Projects</h1>
+      <p class="text-muted-foreground text-lg max-w-2xl leading-relaxed">
+        Engineering problems I've solved — featuring sub-millisecond trading systems, AI models, and full-stack applications.
+      </p>
+    </header>
+    <div id="catalog-root"></div>
+    <noscript>
+      <p style="font-family:monospace;color:#888;text-align:center;padding:4rem">
+        JavaScript is required to view the project catalog.
+      </p>
+    </noscript>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<script>
+  async function mount() {
+    const root = document.getElementById('catalog-root');
+    if (!root) return;
+    try {
+      const { createRoot } = await import('react-dom/client');
+      const { createElement } = await import('react');
+      const { ProjectCatalog } = await import('../../components/projects/ProjectCatalog');
+      const res = await fetch('/data/projects.json');
+      if (!res.ok) throw new Error('Failed to load projects');
+      const data = await res.json();
+      createRoot(root).render(
+        createElement(ProjectCatalog, {
+          projects: data.projects || [],
+          categories: data.categories || []
+        })
+      );
+    } catch (e) {
+      if (root) root.textContent = 'Failed to load projects. Please refresh.';
+    }
+  }
+  mount();
+</script>

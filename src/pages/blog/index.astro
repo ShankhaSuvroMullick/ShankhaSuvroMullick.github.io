@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Navigation } from '../../components/layout/Navigation';
+import { Footer } from '../../components/layout/Footer';
+import { PostList } from '../../components/blog/PostList';
+import '../../styles/global.css';
+---
+<BaseLayout title="Blog — Shankha Suvro Mullick" description="Technical deep-dives on AI, quantitative finance, and systems engineering.">
+  <Navigation client:load currentPath={Astro.url.pathname} />
+  <main class="container mx-auto px-4 md:px-8 py-12 max-w-3xl space-y-12">
+    <header class="space-y-3">
+      <h1 class="text-4xl font-display font-bold tracking-tight">Writing</h1>
+      <p class="text-muted-foreground text-lg">Technical deep-dives on market making, low-latency systems, and AI engineering.</p>
+    </header>
+    <PostList client:load posts={[]} />
+  </main>
+  <Footer />
+</BaseLayout>

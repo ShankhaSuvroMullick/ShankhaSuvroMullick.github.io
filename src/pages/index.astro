@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Navigation } from '../components/layout/Navigation';
+import { Footer } from '../components/layout/Footer';
+import { Hero } from '../components/home/Hero';
+import { Skills } from '../components/home/Skills';
+import { Education } from '../components/home/Education';
+import { Experience } from '../components/home/Experience';
+import { CompetitiveProgramming } from '../components/home/CompetitiveProgramming';
+import '../styles/global.css';
+---
+<BaseLayout>
+  <Navigation client:load currentPath={Astro.url.pathname} />
+  <main class="container mx-auto px-4 md:px-8 py-12 md:py-20 max-w-5xl">
+    <div class="space-y-20">
+      <Hero client:load />
+      <!-- Gap + divider above Skills --> 
+      <Skills client:visible />
+    
+      <Education client:visible />
+      <Experience client:visible />
+      <CompetitiveProgramming client:visible />
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

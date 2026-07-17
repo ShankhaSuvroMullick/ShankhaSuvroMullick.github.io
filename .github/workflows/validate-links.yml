@@ -1,0 +1,29 @@
+name: Validate Links
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check links
+        run: python scripts/validate_links.py
+      - name: Open issue on failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: 'Dead links detected — ' + new Date().toISOString().split('T')[0],
+              body: 'Run `python scripts/validate_links.py` locally to see broken links.',
+              labels: ['maintenance']
+            })
