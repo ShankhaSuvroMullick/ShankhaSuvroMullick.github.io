@@ -67,18 +67,20 @@ def codeforces():
 def leetcode():
     handle = "RMSM"
     try:
-        query = """{"query":"{matchedUser(username:\\"RMSM\\"){submitStatsGlobal{acSubmissionNum{difficulty count}}userContestRanking{rating attendedContestsCount}}}"}"""
-        payload = query.encode()
+        payload = json.dumps(
+            {
+                "query": "query($u:String!){matchedUser(username:$u){submitStatsGlobal{acSubmissionNum{difficulty count}}userContestRanking{rating attendedContestsCount}}}",
+                "variables": {"u": handle},
+            }
+        ).encode()
         req = urllib.request.Request(
-            "https://leetcode.com/graphql/",
+            "https://leetcode.com/graphql",
             data=payload,
             headers={
                 "Content-Type": "application/json",
-                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+                "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
                 "Referer": "https://leetcode.com/",
                 "Origin": "https://leetcode.com",
-                "x-csrftoken": "dummy",
-                "cookie": "csrftoken=dummy;",
             },
         )
         data = json.loads(urllib.request.urlopen(req, timeout=15).read())
