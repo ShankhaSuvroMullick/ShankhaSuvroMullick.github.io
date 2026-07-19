@@ -8,7 +8,7 @@
     {
       "id": "ai-ml",
       "label": "Artificial Intelligence & ML",
-      "icon": "🤖",
+      "icon": "\ud83e\udd16",
       "subcategories": [
         "Large Language Models",
         "AI Agents",
@@ -24,7 +24,7 @@
     {
       "id": "quant-finance",
       "label": "Mathematics & Quantitative",
-      "icon": "💹",
+      "icon": "\ud83d\udcb9",
       "subcategories": [
         "Quantitative Finance",
         "Algorithmic Trading",
@@ -39,7 +39,7 @@
     {
       "id": "systems",
       "label": "Systems Programming",
-      "icon": "⚡",
+      "icon": "\u26a1",
       "subcategories": [
         "High Performance Computing",
         "Concurrent Programming",
@@ -53,7 +53,7 @@
     {
       "id": "software-engineering",
       "label": "Software Engineering",
-      "icon": "🛠",
+      "icon": "\ud83d\udee0",
       "subcategories": [
         "Backend Development",
         "Frontend Development",
@@ -67,7 +67,7 @@
     {
       "id": "data",
       "label": "Data Science & Analytics",
-      "icon": "📊",
+      "icon": "\ud83d\udcca",
       "subcategories": [
         "Data Engineering",
         "Data Science",
@@ -81,7 +81,7 @@
     {
       "id": "cloud-devops",
       "label": "Cloud & Infrastructure",
-      "icon": "☁️",
+      "icon": "\u2601\ufe0f",
       "subcategories": [
         "DevOps",
         "Platform Engineering",
@@ -96,7 +96,7 @@
     {
       "id": "security",
       "label": "Security",
-      "icon": "🔐",
+      "icon": "\ud83d\udd10",
       "subcategories": [
         "Cybersecurity",
         "Cryptography",
@@ -108,7 +108,7 @@
     {
       "id": "research",
       "label": "Research",
-      "icon": "🔬",
+      "icon": "\ud83d\udd2c",
       "subcategories": [
         "Research Papers",
         "Reproducibility Studies",
@@ -120,7 +120,7 @@
     {
       "id": "open-source",
       "label": "Open Source",
-      "icon": "📦",
+      "icon": "\ud83d\udce6",
       "subcategories": [
         "Libraries & Frameworks",
         "Developer Tools",
@@ -131,7 +131,7 @@
     {
       "id": "competitive-programming",
       "label": "Competitive Programming",
-      "icon": "🏆",
+      "icon": "\ud83c\udfc6",
       "subcategories": [
         "Data Structures & Algorithms",
         "LeetCode",
@@ -143,7 +143,7 @@
     {
       "id": "product",
       "label": "Product & Entrepreneurship",
-      "icon": "🚀",
+      "icon": "\ud83d\ude80",
       "subcategories": [
         "SaaS",
         "Startup Projects",
@@ -155,7 +155,7 @@
     {
       "id": "robotics",
       "label": "Robotics & Hardware",
-      "icon": "🦾",
+      "icon": "\ud83e\uddbe",
       "subcategories": [
         "Robotics",
         "Autonomous Systems",
@@ -168,7 +168,7 @@
     {
       "id": "blockchain",
       "label": "Blockchain & Web3",
-      "icon": "⛓",
+      "icon": "\u26d3",
       "subcategories": [
         "Smart Contracts",
         "Web3",
@@ -179,7 +179,7 @@
     {
       "id": "mobile-game",
       "label": "Mobile & Game Dev",
-      "icon": "🎮",
+      "icon": "\ud83c\udfae",
       "subcategories": [
         "Android",
         "iOS",
@@ -191,7 +191,7 @@
     {
       "id": "professional",
       "label": "Professional",
-      "icon": "🎓",
+      "icon": "\ud83c\udf93",
       "subcategories": [
         "Hackathons",
         "Fellowships",
@@ -250,7 +250,7 @@
       "started": "2025-10",
       "last_updated": "2026-07",
       "stars": 0,
-      "benchmark": "<1μs median latency",
+      "benchmark": "<1\u03bcs median latency",
       "difficulty": "expert",
       "license": "MIT",
       "architectureOverview": "Lock-free MPSC queue for order ingestion feeding into a price-level indexed order book with SIMD-accelerated traversal. Separate execution engine with atomic operations for fill matching.",
@@ -272,18 +272,18 @@
         }
       ],
       "caseStudy": {
-        "problem": "Manual order matching in HFT systems is the critical bottleneck. Every microsecond of latency in order processing translates directly to worse fill prices and missed opportunities. Building a matching engine that operates below 1μs requires careful co-design of data structures, memory layout, and CPU micro-architecture awareness.",
+        "problem": "Manual order matching in HFT systems is the critical bottleneck. Every microsecond of latency in order processing translates directly to worse fill prices and missed opportunities. Building a matching engine that operates below 1\u03bcs requires careful co-design of data structures, memory layout, and CPU micro-architecture awareness.",
         "constraints": [
           "Must process 2M+ events/sec sustained",
-          "P99 latency < 5μs",
+          "P99 latency < 5\u03bcs",
           "No heap allocation in hot path",
           "Single-threaded order book with concurrent ingestion queue"
         ],
         "decisions": [
-          "Lock-free MPSC queue over mutex-guarded queue — eliminates contention on producer side",
-          "Price levels as sorted arrays over red-black tree — better cache locality for common case",
-          "SIMD for price search over sequential scan — 4x speedup on AVX2",
-          "Custom allocator for order nodes — avoids malloc overhead in critical path"
+          "Lock-free MPSC queue over mutex-guarded queue \u2014 eliminates contention on producer side",
+          "Price levels as sorted arrays over red-black tree \u2014 better cache locality for common case",
+          "SIMD for price search over sequential scan \u2014 4x speedup on AVX2",
+          "Custom allocator for order nodes \u2014 avoids malloc overhead in critical path"
         ],
         "tradeoffs": [
           "Arrays for price levels: O(n) insertion vs O(log n) for tree, but cache locality wins for typical book depth < 100 levels",
@@ -291,12 +291,12 @@
           "Single-threaded book: simplifies correctness, sacrifices parallelism"
         ],
         "metrics": [
-          "< 1μs median order processing latency",
-          "< 5μs P99 under 2M events/sec load",
+          "< 1\u03bcs median order processing latency",
+          "< 5\u03bcs P99 under 2M events/sec load",
           "0 heap allocations in hot path",
           "4x price search speedup vs sequential via SIMD"
         ],
-        "retrospective": "I'd add a formal latency histogram output to the benchmark harness earlier — I wasted time debugging performance regressions that a proper histogram would have caught immediately. I'd also explore prefetching next price level during SIMD search."
+        "retrospective": "I'd add a formal latency histogram output to the benchmark harness earlier \u2014 I wasted time debugging performance regressions that a proper histogram would have caught immediately. I'd also explore prefetching next price level during SIMD search."
       },
       "notes": "FTTP application project"
     },
@@ -349,7 +349,7 @@
       "started": "2026-05",
       "last_updated": "2026-07",
       "stars": 0,
-      "benchmark": "61.5% per-tick win rate · 4,682 order executions",
+      "benchmark": "61.5% per-tick win rate \u00b7 4,682 order executions",
       "difficulty": "advanced",
       "license": "MIT",
       "architectureOverview": "Event-driven simulation engine with a stochastic price process, inventory-aware quoting strategy, and execution model with fill probability based on order flow toxicity.",
@@ -362,12 +362,12 @@
       ],
       "challenges": [
         {
-          "challenge": "Inventory blowup under trending markets — one-sided fill pressure",
-          "solution": "Added inventory risk penalty to spread formula: spread += γ * |inventory| * σ"
+          "challenge": "Inventory blowup under trending markets \u2014 one-sided fill pressure",
+          "solution": "Added inventory risk penalty to spread formula: spread += \u03b3 * |inventory| * \u03c3"
         },
         {
           "challenge": "Overfit strategy to specific volatility regime",
-          "solution": "Tested across multiple σ regimes; added realized volatility adaptation"
+          "solution": "Tested across multiple \u03c3 regimes; added realized volatility adaptation"
         }
       ],
       "caseStudy": {
@@ -378,9 +378,9 @@
           "P&L attribution must separate spread capture from inventory moves"
         ],
         "decisions": [
-          "Stochastic execution model over deterministic — more realistic; fills depend on queue position",
-          "Inventory-aware skewing over symmetric quoting — reduces adverse selection",
-          "Realized volatility for regime detection over implied — simpler, no options data needed"
+          "Stochastic execution model over deterministic \u2014 more realistic; fills depend on queue position",
+          "Inventory-aware skewing over symmetric quoting \u2014 reduces adverse selection",
+          "Realized volatility for regime detection over implied \u2014 simpler, no options data needed"
         ],
         "tradeoffs": [
           "Stochastic fills: harder to backtest reproducibly, but necessary for realistic strategy evaluation",
@@ -392,7 +392,7 @@
           "Positive Sharpe under low and medium volatility regimes",
           "Max drawdown contained to <3% of notional under tested regimes"
         ],
-        "retrospective": "The execution model is still too simple — real HFT execution depends on queue position, which requires a proper limit order book simulation. The next version should integrate with the LOB matching engine."
+        "retrospective": "The execution model is still too simple \u2014 real HFT execution depends on queue position, which requires a proper limit order book simulation. The next version should integrate with the LOB matching engine."
       }
     },
     {
@@ -400,7 +400,7 @@
       "name": "CLI Task Manager",
       "repo": "https://github.com/ShankhaSuvroMullick/cli-task-manager",
       "demo": "",
-      "description": "Production-grade CLI task manager with 9 Typer commands, JSON-backed persistence, dataclass serialization, automatic backup, and single-command undo — zero data loss across destructive operations.",
+      "description": "Production-grade CLI task manager with 9 Typer commands, JSON-backed persistence, dataclass serialization, automatic backup, and single-command undo \u2014 zero data loss across destructive operations.",
       "languages": [
         "Python"
       ],
@@ -442,10 +442,10 @@
       "started": "2026-06",
       "last_updated": "2026-06",
       "stars": 0,
-      "benchmark": "9 commands · 4-module architecture · zero data loss",
+      "benchmark": "9 commands \u00b7 4-module architecture \u00b7 zero data loss",
       "difficulty": "medium",
       "license": "MIT",
-      "architectureOverview": "4-module separation: CLI layer (Typer commands) → business logic → models (dataclasses) → storage (JSON with atomic write + backup). Single-command undo via backup file restoration.",
+      "architectureOverview": "4-module separation: CLI layer (Typer commands) \u2192 business logic \u2192 models (dataclasses) \u2192 storage (JSON with atomic write + backup). Single-command undo via backup file restoration.",
       "features": [
         "9 Typer commands",
         "Bulk operations (bulk-done, bulk-delete)",
@@ -458,11 +458,11 @@
       "challenges": [
         {
           "challenge": "Destructive operations (delete, bulk-delete) risking data loss if interrupted",
-          "solution": "Atomic write pattern: write to temp file, rename to target — single-command undo via backup"
+          "solution": "Atomic write pattern: write to temp file, rename to target \u2014 single-command undo via backup"
         },
         {
           "challenge": "Validating due dates and priorities at the CLI layer without leaking logic",
-          "solution": "Validation callbacks in Typer decorators — errors surface before any business logic runs"
+          "solution": "Validation callbacks in Typer decorators \u2014 errors surface before any business logic runs"
         }
       ]
     }
